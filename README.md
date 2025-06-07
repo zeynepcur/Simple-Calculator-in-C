@@ -1,36 +1,41 @@
 #include <stdio.h>
 
 int main() {
-    double num1, num2;
+    double num1, num2, result;
     char op;
 
-    printf("Enter the first number: ");
+    printf("Birinci sayıyı girin: ");
     scanf("%lf", &num1);
 
-    printf("Enter the operator (+, -, *, /): ");
-    scanf(" %c", &op);
-
-    printf("Enter the second number: ");
+    printf("İkinci sayıyı girin: ");
     scanf("%lf", &num2);
 
-    switch(op) {
+    printf("İşlemi seçin (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    switch (op) {
         case '+':
-            printf("%.2lf + %.2lf = %.2lf\n", num1, num2, num1 + num2);
+            result = num1 + num2;
+            printf("Sonuç: %.2lf\n", result);
             break;
         case '-':
-            printf("%.2lf - %.2lf = %.2lf\n", num1, num2, num1 - num2);
+            result = num1 - num2;
+            printf("Sonuç: %.2lf\n", result);
             break;
         case '*':
-            printf("%.2lf * %.2lf = %.2lf\n", num1, num2, num1 * num2);
+            result = num1 * num2;
+            printf("Sonuç: %.2lf\n", result);
             break;
         case '/':
-            if(num2 != 0)
-                printf("%.2lf / %.2lf = %.2lf\n", num1, num2, num1 / num2);
-            else
-                printf("Error: Division by zero is not allowed!\n");
+            if (num2 == 0)
+                printf("Hata: Sıfıra bölme yapılamaz!\n");
+            else {
+                result = num1 / num2;
+                printf("Sonuç: %.2lf\n", result);
+            }
             break;
         default:
-            printf("Invalid operator!\n");
+            printf("Geçersiz işlem!\n");
     }
 
     return 0;
