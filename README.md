@@ -1,3 +1,4 @@
+A simple C program takes two numbers and an operator (+, -, *, /) from the user, then shows the result of the operation.
 
 ```c
 #include <stdio.h>
